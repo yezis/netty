@@ -1,4 +1,4 @@
-# Netty Project
+# Netty Project(个人学习、阅读源码所用)
 
 Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients.
 
