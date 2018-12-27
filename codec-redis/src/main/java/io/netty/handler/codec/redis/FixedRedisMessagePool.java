@@ -18,6 +18,9 @@ package io.netty.handler.codec.redis;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.util.CharsetUtil;
+// 2018-12-27
+// io.netty.util.collection 是自动产生的，并非源代码文件，需要转到common下，执行mvn clean compile
+// 生成common/target/generated-sources/collections（但是在IDE中依旧会出现报错提示，怎么办？）
 import io.netty.util.collection.LongObjectHashMap;
 import io.netty.util.collection.LongObjectMap;
 import io.netty.util.internal.UnstableApi;
