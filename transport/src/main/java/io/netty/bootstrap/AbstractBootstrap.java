@@ -319,9 +319,9 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
      *
      * channel = channelFactory.newChannel();
      * 通过成员变量channelFactory的newChannel()创建Netty Channel，
-     * channelFactory的创建 详见AbstractBootstrap.channel(Class<? extends C> channelClass)
+     * channelFactory的创建 详见{@link #channel(Class)}
      *
-     * Channel的类型为AbstractBootstrap.channel(Class<? extends C> channelClass)所传入的Class类型
+     * Channel的类型为{@link #channel(Class)}所传入的Class类型
      * 子类ServerBootstrap 服务器启动器传入的参数为NioServerSocketChannel.class；
      * 子类Bootstrap 客户端启动器传入的参数为NioSocketChannel.class。
      *
