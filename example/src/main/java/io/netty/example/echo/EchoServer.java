@@ -74,7 +74,7 @@ public final class EchoServer {
             ChannelFuture f = b.bind(PORT).sync();
 
             // Wait until the server socket is closed.
-            f.channel().closeFuture().sync();
+            f.channel().closeFuture().sync(); // .sync() 阻塞等待连接关闭，正常情况下程序会阻塞在此
         } finally {
             // Shut down all event loops to terminate all threads.
             bossGroup.shutdownGracefully();
