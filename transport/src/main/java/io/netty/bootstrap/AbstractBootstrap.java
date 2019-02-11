@@ -279,7 +279,7 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     private ChannelFuture doBind(final SocketAddress localAddress) {
-        final ChannelFuture regFuture = initAndRegister();
+        final ChannelFuture regFuture = initAndRegister();  // 创建、初始化并注册Channel
         final Channel channel = regFuture.channel();
         if (regFuture.cause() != null) {
             return regFuture;
@@ -314,6 +314,23 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
         }
     }
 
+    /**
+     * initAndRegister() 创建、初始化并注册Channel
+     *
+     * channel = channelFactory.newChannel();
+     * 通过成员变量channelFactory的newChannel()创建Netty Channel，
+     * channelFactory的创建 详见AbstractBootstrap.channel(Class<? extends C> channelClass)
+     *
+     * Channel的类型为AbstractBootstrap.channel(Class<? extends C> channelClass)所传入的Class类型
+     * 子类ServerBootstrap 服务器启动器传入的参数为NioServerSocketChannel.class；
+     * 子类Bootstrap 客户端启动器传入的参数为NioSocketChannel.class。
+     *
+     * ChannelFuture regFuture = config().group().register(channel);
+     * 注册Channel
+     *
+     *
+     * @return
+     */
     final ChannelFuture initAndRegister() {
         Channel channel = null;
         try {
